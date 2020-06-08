@@ -1,0 +1,161 @@
+<div class="register-page">
+  <!-- Intro Section -->
+  <section class="view intro-2">
+    <div class="mask rgba-gradient">
+      <div class="container h-100 d-flex justify-content-center align-items-center">
+
+        <!-- Grid row -->
+        <div class="row pt-5">
+
+          <!-- Grid column -->
+          <div class="col-md-12">
+
+            <div class="card">
+              <div class="card-body">
+
+                <h2 class="font-weight-bold my-4 text-center mb-5 mt-4 font-weight-bold">
+                  <strong>REGISTER</strong>
+                </h2>
+                <hr>
+
+                <!-- Grid row -->
+                <div class="row mt-5">
+
+                  <!-- Grid column -->
+                  <div class="col-md-6 ml-lg-5 ml-md-3">
+
+                    <!-- Grid row -->
+                    <div class="row pb-4">
+                      <div class="col-2 col-lg-1">
+                        <i class="fas fa-university indigo-text fa-lg"></i>
+                      </div>
+                      <div class="col-10">
+                        <h4 class="font-weight-bold mb-4">
+                          <strong>Safety</strong>
+                        </h4>
+                        <p class="">All your information is safe from the malicious intentions of the human mind</p>
+                      </div>
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row pb-4">
+                      <div class="col-2 col-lg-1">
+                        <i class="fas fa-desktop deep-purple-text fa-lg"></i>
+                      </div>
+                      <div class="col-10">
+                        <h4 class="font-weight-bold mb-4">
+                          <strong>Technology</strong>
+                        </h4>
+                        <p class="">With our technologies we  brings the tools of empowerment in your hands and minds of those who use them.</p>
+                      </div>
+                    </div>
+                    <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row pb-4">
+                      <div class="col-2 col-lg-1">
+                        <mdb-icon fas icon="crosshairs" class="deep-purple-text fa-lg"></mdb-icon>
+                      </div>
+                      <div class="col-10">
+                        <h4 class="font-weight-bold mb-4">
+                          <strong>Goal</strong>
+                        </h4>
+                        <p class="">We expose people to information and ideas so they can better understand the world </p>
+                      </div>
+                    </div>
+                    <!-- Grid row -->
+
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-5">
+
+                    <!-- Grid row -->
+                    <div class="row pb-4 d-flex justify-content-center mb-4">
+
+                      <h4 class="mt-3 mr-4">
+                        <strong>Login with</strong>
+                      </h4>
+
+                      <div class="inline-ul text-center d-flex justify-content-center">
+                        <a class="p-2 m-2 fa-lg tw-ic">
+                          <i class="fab fa-twitter fa-lg indigo-text"></i>
+                        </a>
+                        <a class="p-2 m-2 fa-lg li-ic">
+                          <i class="fab fa-linkedin-in fa-lg indigo-text"> </i>
+                        </a>
+                        <a class="p-2 m-2 fa-lg ins-ic">
+                          <i class="fab fa-instagram fa-lg indigo-text"> </i>
+                        </a>
+                      </div>
+
+                      <h4 class="mt-3 ml-4">
+                        <strong>or:</strong>
+                      </h4>
+
+                    </div>
+                    <!-- /Grid row -->
+
+                    <!-- Body -->
+                    <form (ngSubmit)="onSubmit()" #f="ngForm">
+                      <div class="md-form">
+                        <i class="fas fa-user prefix"></i>
+                        <input type="text" mdbValidate id="orangeForm-firstname" class="form-control" name="nom" ngModel required="true" #inputname="ngModel">
+                        <label for="orangeForm-firstname">First name</label>
+                        <mdb-error *ngIf="inputname.invalid && inputname.touched">saisir le nom</mdb-error>
+                        <mdb-success *ngIf="inputname.valid && inputname.touched"></mdb-success>
+                      </div>
+                      <div class="md-form">
+                        <i class="fas fa-user prefix"></i>
+                        <input type="text" mdbValidate id="orangeForm-lastname" class="form-control" name="prenom" ngModel required="true" #lastname="ngModel">
+                        <label for="orangeForm-lastname">Last name</label>
+                        <mdb-error *ngIf="lastname.invalid && lastname.touched">saisir le prenom</mdb-error>
+                        <mdb-success *ngIf="lastname.valid"></mdb-success>
+                      </div>
+                      <div class="md-form">
+                        <i class="fas fa-envelope prefix"></i>
+                        <input type="text" mdbValidate id="orangeForm-email" class="form-control" name="email" ngModel required="true" email="true" #email="ngModel">
+                        <label for="orangeForm-email">Your email</label>
+                        <mdb-error *ngIf="email.invalid && (email.dirty || email.touched)">saisir un email </mdb-error>
+                        <mdb-success *ngIf="email.valid && (email.dirty || email.touched)"></mdb-success>
+                      </div>
+
+                      <div class="md-form">
+                        <i class="fas fa-lock prefix"></i>
+                        <input type="password" mdbValidate id="orangeForm-pass" class="form-control" name="password" ngModel required="true" #password="ngModel">
+                        <label for="orangeForm-pass">Your password</label>
+                        <mdb-error *ngIf="password.invalid && (password.dirty || password.touched)">saisir un mot de passe </mdb-error>
+                        <mdb-success *ngIf="password.valid && (password.dirty || password.touched)"></mdb-success>
+                      </div>
+
+                      <div class="text-center">
+                        <button mdbBtn type="submit" color="indigo" rounded="true" class="mt-4" mdbWavesEffect [disabled]="!f.valid">
+                          Sign Up
+                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loader"></span>
+                        </button>
+                      </div>
+                    </form>
+                    <!-- Body -->
+                  </div>
+                  <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+              </div>
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+    </div>
+  </section>
+  <!-- Intro Section -->
+
+</div>

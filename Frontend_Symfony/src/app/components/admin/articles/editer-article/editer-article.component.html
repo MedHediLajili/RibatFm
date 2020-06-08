@@ -1,0 +1,92 @@
+<main>
+  <div class="center-screen">
+    <section class="form-gradient mb-5">
+      <mdb-card>
+
+        <!--Header-->
+        <div class="header peach-gradient">
+
+          <div class="row d-flex justify-content-center">
+            <h3 class="white-text mb-0 py-4 font-weight-bold">Edit Article</h3>
+          </div>
+
+        </div>
+        <!--Header-->
+
+        <mdb-card-body class="mx-4">
+         <form [formGroup]="editArticleForm" (ngSubmit)="editArticle()">
+
+          <div class="md-form">
+            <mdb-icon fas icon="tag" class="prefix grey-text"></mdb-icon>
+            <input type="text" mdbValidate id="form106" class="form-control" mdbInput formControlName="title">
+            <label for="form106">Subject</label>
+            <mdb-error *ngIf="editArticleForm.get('title').invalid && (editArticleForm.get('title').dirty || editArticleForm.get('title').touched)">saisir le titre</mdb-error>
+            <mdb-success *ngIf="editArticleForm.get('title').valid && (editArticleForm.get('title').dirty || editArticleForm.get('title').touched)"></mdb-success>
+          </div>
+
+            <div class="md-form">
+              <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
+              <textarea type="text" mdbValidate id="form107" class="md-textarea form-control" rows="5" mdbInput formControlName="contenu"></textarea>
+              <label for="form107">Your message</label>
+              <mdb-error *ngIf="editArticleForm.get('contenu').invalid && (editArticleForm.get('contenu').dirty || editArticleForm.get('contenu').touched)">saisir le contenu de l'article</mdb-error>
+              <mdb-success *ngIf="editArticleForm.get('contenu').valid && (editArticleForm.get('contenu').dirty || editArticleForm.get('contenu').touched)"></mdb-success>
+            </div>
+
+          <div class="file-field md-form">
+            <div mdbBtn floating="true" size="md" color="amber" mdbWavesEffect>
+              <mdb-icon fas icon="cloud-upload-alt" aria-hidden="true"></mdb-icon>
+              <input type="file" formControlName="image" accept="image/*" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+              <mdb-error *ngIf="editArticleForm.get('image').invalid && (editArticleForm.get('image').dirty)">choose an image for the article</mdb-error>
+              <mdb-success *ngIf="editArticleForm.get('image').valid && (editArticleForm.get('image').dirty || editArticleForm.get('image').touched)"></mdb-success>
+            </div>
+            <div class="file-path-wrapper mt-3">
+              <input class="file-path" formControlName="image_name" type="text" placeholder="choisir une image" [value]="showFiles()">
+            </div>
+          </div>
+
+          <!--Grid row-->
+          <div class="row d-flex align-items-center mb-3 mt-4">
+            <!--Grid column-->
+            <div class="col-md-12">
+              <div class="text-center">
+                <button type="submit" mdbBtn color="grey" rounded="true" class="z-depth-1a" [disabled]="editArticleForm.invalid">Save</button>
+                <button type="button" mdbBtn color="red" rounded="true" class="z-depth-1a" (click)="init()">Reset</button>
+              </div>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+         </form>
+        </mdb-card-body>
+
+      </mdb-card>
+      <!--/Form with header-->
+    </section>
+  </div>
+</main>
+
+
+
+<!-- Model info-->
+<div mdbModal #info="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+ aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+ <div class="modal-dialog modal-notify modal-info modal-side modal-bottom-right" role="document">
+   <!--Content-->
+   <div class="modal-content">
+     <!--Header-->
+     <div class="modal-header">
+       <p class="heading lead">Article was updated successfuly</p>
+     </div>
+
+     <!--Body-->
+     <div class="modal-body">
+       <div class="text-center">
+         <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+       </div>
+     </div>
+
+   </div>
+   <!--/.Content-->
+ </div>
+</div>
+<!-- Model info-->  

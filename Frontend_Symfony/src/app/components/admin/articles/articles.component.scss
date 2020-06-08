@@ -1,0 +1,145 @@
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 95%;
+  margin-left: 20px;
+  margin-right: 6px;
+}
+.tabname {
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+
+
+.mat-column-titre {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  //flex: 0 0 28% !important;
+  //width: 28% !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-image {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  //flex: 0 0 28% !important;
+  //width: 28% !important;
+  flex: 0 0 10% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-datecreation {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  //flex: 0 0 28% !important;
+  //width: 28% !important;
+  flex: 0 0 16% !important;
+  width: 16% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-categorie {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  //flex: 0 0 28% !important;
+  //width: 28% !important;
+  flex: 0 0 14% !important;
+  width: 14% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-admin {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  //flex: 0 0 28% !important;
+  //width: 28% !important;
+  flex: 0 0 13% !important;
+  width: 13% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-nbvisiteurs {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  //flex: 0 0 28% !important;
+  //width: 28% !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.mat-header-cell:last-child{
+  padding-left: 25px;
+}
+
+.mat-header-cell{
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+.spe{
+  margin-top: 10px;
+}
+
+.photo{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}

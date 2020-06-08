@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/core/colors';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/core/variables';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/core/variables-pro';
+
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/sections-pro/_contacts-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/sections-pro/_magazine-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/sections-pro/_pricing-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/sections-pro/_social-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/sections-pro/_team-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/sections-pro/_templates-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/sections-pro/_testimonials-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/addons-pro/_blog-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/addons-pro/_chat-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/addons-pro/_ecommerce-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/addons-pro/_steppers-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/addons-pro/_timeline-pro.scss';
+@import './../projects/ng-uikit-pro-standard/src/lib/assets/scss/addons-pro/_timelines-pro.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

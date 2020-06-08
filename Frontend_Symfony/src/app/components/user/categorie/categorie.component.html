@@ -1,0 +1,84 @@
+<main>
+    <div class="container-fluid">
+      <!-- Magazine --->
+      <div class="row mt-5">
+        <!-- Main news --->
+        <div class="col-xl-12 col-md-12">
+
+         <h4 class="font-weight-bold"><strong>{{categorie.nomCategory}}</strong></h4>
+  
+         <hr class="red title-hr">
+  
+        <!-- Section: Group of personal cards --->
+        <section class="pt-2 mt-3 pb-3">
+            
+            <!-- Grid row --->
+            <div class="row">
+            
+              <!-- Grid column --->
+                <div class="col-md-6 col-lg-3" *ngFor="let article of articles">
+            
+                 <!-- Card --->
+                 <div class="card card-personal mb-4">
+            
+                        <!-- Card image --->
+                        <div class="view overlay">
+            
+                                <img class="card-img-top" src="{{article.image}}"
+                                    alt="Card image cap">
+            
+                                <a href="#!">
+            
+                                    <div class="mask rgba-white-slight"></div>
+            
+                                </a>
+            
+                        </div>
+                        <!-- Card image --->
+            
+                        <!-- Card content --->
+                        <div class="card-body">
+            
+                            <!-- Title --->
+                            <a (click)="onArticle(article.id)">
+            
+                             <h4 class="card-title"><strong>{{article.titre}}</strong></h4>
+            
+                            </a>
+            
+                                <a><span class="badge badge-danger">{{categorie.nomCategory}}</span></a>
+            
+                                <!-- Text --->
+                                <p class="card-text mt-2">
+                                    {{article.contenu}}
+                                </p>
+                                <!--<p class="text-right mb-0 font-small font-weight-bold"><a>read more <i
+                                    class="fas fa-angle-right"></i></a></p>-->
+                                <hr>
+            
+                                <a class="card-meta"><span><i class="fas fa-user pr-1"></i>{{article.creePar}}</span></a>
+            
+                                <p class="card-meta float-right">{{article.dateCreation | date: 'dd/MM/yyyy'}}</p>
+
+            
+                        </div>
+                        <!-- Card content --->
+            
+                 </div>
+                 <!-- Card --->
+            
+                </div>
+              <!-- Grid column --->
+            
+            </div>
+            <!-- Grid row --->
+            
+        </section>
+        <!-- Section: Group of personal cards --->
+  
+        </div>
+        <!-- Main news --->
+      </div>
+      <!-- Magazine --->
+    </div>
+</main>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RibatFM</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="./assets/css/mdb.min.css">
+</head>
+<body class="fixed-sn white-skin">
+  <app-root></app-root>
+</body>
+<script src="./assets/js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="./assets/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="./assets/js/bootstrap.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="./assets/js/mdb.min.js"></script>
+<!-- JVectorMap -->
+<link rel="stylesheet" href="./assets/js/vendor/jvectormap/jquery-jvectormap-2.0.3.css" type="text/css" media="screen" />
+<script src="./assets/js/vendor/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+<script src="./assets/js/vendor/jvectormap/jquery-jvectormap-world-mill.js"></script>
+
+<!-- initialization du sidenav -->
+
+
+<!-- changement du mode -->
+<script>
+  $('#dark-mode').on('click', function (e) {
+
+    e.preventDefault();
+
+    $('h4, button').not('.check').toggleClass('dark-grey-text text-white');
+    $('.list-panel a').toggleClass('navy-blue-bg-a text-white').toggleClass('list-group-border');
+    $('.list-panel a').toggleClass('dark-grey-text');
+    $('footer, .card').toggleClass('dark-card-admin');
+    $('body, .navbar').toggleClass('white-skin navy-blue-skin');
+    $(this).toggleClass('white text-dark btn-outline-black');
+    $('body').toggleClass('dark-bg-admin');
+    $('h6, .card, td, th, i, li a, input, label').not(
+      '#slide-out i, #slide-out a, .dropdown-item i, .dropdown-item').toggleClass('text-white');
+    $('.btn-dash').toggleClass('grey blue').toggleClass('lighten-3 darken-3');
+    $('.gradient-card-header').toggleClass('white black lighten-4');
+
+
+    /*for (let i = 0; i <= 5; i++) {
+      myRadarChart.data.datasets[0].data[i] = (Math.random(i) * 100);
+      myRadarChart.data.datasets[1].data[i] = (Math.random(i) * 100);
+    }
+
+    for (let i = 0; i <= 6; i++) {
+      myBarChart.data.datasets[0].data[i] = (Math.random(i) * 100);
+    }
+
+    for (let i = 0; i <= 4; i++) {
+      myPieChart.data.datasets[0].data[i] = (Math.random(i) * 100);
+    }
+
+    myPieChart.update();
+    myBarChart.update();
+    myRadarChart.update();*/
+  });
+</script>
+
+<!-- login page-->
+<script>
+
+  new WOW().init();
+
+</script>
+
+
+</html>

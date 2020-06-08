@@ -1,0 +1,300 @@
+<main>
+    <div class="container-fluid">
+        <!-- Magazine -->
+        <div class="row mt-2">
+
+        <!-- Main news -->
+        <div class="col-xl-8 col-md-12">
+
+            <!-- Post -->
+            <div class="row mt-2 mb-5 pb-3 mx-2">
+  
+              <!-- Card -->
+              <div class="card card-body mb-5">
+  
+                <div class="post-data mb-4">
+  
+                  <p class="font-small dark-grey-text mb-1">
+  
+                    <strong>Author:</strong> {{article.creePar}}</p>
+  
+                  <p class="font-small grey-text">
+  
+                    <i class="far fa-clock-o"></i>  {{article.dateCreation | date: 'dd/MM/yyyy  HH:mm'}}</p>
+  
+                </div>
+  
+                <a>
+  
+                  <span class="badge badge-danger">{{article.nomCategory}}</span>
+  
+                </a>
+  
+                <!-- Title -->
+                <h2 class="font-weight-bold mt-3">
+  
+                  <strong>{{article.titre}}</strong>
+  
+                </h2>
+  
+                <hr class="red title-hr">
+  
+                <img src="{{article.image}}" class="img-fluid z-depth-1 rounded"
+                  alt="sample image">
+  
+                <!-- Grid row -->
+                <div class="row">
+  
+                  <!-- Grid column -->
+                  <div class="col-md-6 mt-4">
+  
+                    <h5 class="font-weight-bold dark-grey-text">
+  
+                      <i class="far fa-lg fa-newspaper mr-3 dark-grey-text"></i>
+  
+                      <strong>{{article.nbvisiteurs}}</strong> Views</h5>
+  
+                  </div>
+                  <!-- Grid column -->
+  
+                  <!-- Grid column -->
+                  <div class="col-md-6 mt-2 d-flex justify-content-end">
+  
+                    <!-- Facebook -->
+                    <a type="button" class="btn-floating btn-small btn-fb">
+  
+                      <i class="fab fa-facebook-f"></i>
+  
+                    </a>
+  
+                    <!-- Twitter -->
+                    <a type="button" class="btn-floating btn-small btn-tw">
+  
+                      <i class="fab fa-twitter"></i>
+  
+                    </a>
+  
+                    <!-- Google + -->
+                    <a type="button" class="btn-floating btn-small btn-gplus">
+  
+                      <i class="fab fa-google-plus-g"></i>
+  
+                    </a>
+  
+                    <!-- Instagram -->
+                    <a type="button" class="btn-floating btn-small btn-ins">
+  
+                      <i class="fab fa-instagram"></i>
+  
+                    </a>
+  
+                  </div>
+                  <!-- Grid column -->
+  
+                </div>
+                <!-- Grid row -->
+  
+                <hr>
+  
+                <!-- Grid row -->
+                <div class="row mx-md-4 px-4 mt-3">
+  
+                  <p class="dark-grey-text article">
+                      {{article.contenu}}
+                  </p>
+  
+  
+                </div>
+                <!-- Grid row -->
+  
+  
+                <hr>
+                <!-- Grid row -->
+                <div class="row mb-4">
+  
+                  <!-- Grid column -->
+                  <div class="col-md-12 text-center">
+  
+                    <h4 class="text-center font-weight-bold dark-grey-text mt-3 mb-3">
+  
+                      <strong>Share this post: </strong>
+  
+                    </h4>
+  
+                    <button type="button" class="btn btn-fb btn-sm">
+  
+                      <i class="fab fa-facebook-f left"></i> Facebook</button>
+  
+                    <!-- Twitter -->
+                    <button type="button" class="btn btn-tw btn-sm">
+  
+                      <i class="fab fa-twitter left"></i> Twitter</button>
+  
+                    <!-- Google + -->
+                    <button type="button" class="btn btn-gplus btn-sm">
+  
+                      <i class="fab fa-google-plus-g left"></i> Google +</button>
+  
+                  </div>
+                  <!-- Grid column -->
+  
+                </div>
+                <!-- Grid row -->
+  
+              </div>
+  
+              <!-- Card -->
+              <section class="text-left">
+  
+                <!-- Author box -->
+                <div class="card card-body">
+  
+                  <div class="row">
+  
+                    <!-- Avatar -->
+                    <div class="col-12 col-sm-2 mb-md-0 mb-3">
+  
+                      <img src="../../../../assets/my_images/user.png"
+                        class="img-fluid rounded-circle" alt="image user">
+  
+                    </div>
+  
+                    <!-- Author Data -->
+                    <div class="col-12 col-sm-10">
+  
+                      <p>
+  
+                        <strong>08/06/2020 date comentaire</strong>
+  
+                      </p>
+  
+                      <div class="personal-sm">
+  
+                        <a class="pr-2 fb-ic">
+  
+                          <i class="fab fa-facebook-f"> </i>
+  
+                        </a>
+  
+                        <a class="p-2 tw-ic">
+  
+                          <i class="fab fa-twitter"> </i>
+  
+                        </a>
+  
+                        <a class="p-2 gplus-ic">
+  
+                          <i class="fab fa-google-plus-g"> </i>
+  
+                        </a>
+  
+                        <a class="p-2 li-ic">
+  
+                          <i class="fab fa-linkedin-in"> </i>
+  
+                        </a>
+  
+                      </div>
+  
+                      <p class="dark-grey-text article">
+                        ici on met le contenu du commentaire normalment
+                        fjkdfjkf jdfjkfj  dfjkf djkfjkjdfk jdfj dfjf djdf jf jdf jdfj fj kfj djf jf jf jf jf djdfjgfdj fjfdjkfjkjdfkjdfk jkf dfjk jkdf
+                      </p>
+  
+                    </div>
+  
+                  </div>
+  
+                </div>
+                <!-- Author box -->
+  
+              </section>
+  
+            </div>
+  
+            <!-- Post -->
+            <h5 class="font-weight-bold mt-3">
+  
+              <strong>YOU MIGHT ALSO LIKE</strong>
+  
+            </h5>
+  
+            <hr class="red title-hr">
+  
+            <!-- Grid row -->
+            <div class="row single-post mb-4">
+  
+              <!-- Grid column -->
+              <div class="col-md-6 text-left mt-3" *ngFor="let articlee of twoarticles">
+  
+                <!-- Card -->
+                <div class="card">
+  
+                  <!-- Card image -->
+                  <div class="view overlay">
+  
+                    <img src="{{articlee.image}}" class="card-img-top"
+                      alt="Sample image">
+  
+                    <a>
+  
+                      <div class="mask rgba-white-slight"></div>
+  
+                    </a>
+  
+                  </div>
+                  <!-- Card image -->
+  
+                  <!-- Card content -->
+                  <div class="card-body">
+  
+                    <!-- Title -->
+                    <h4 class="card-title">
+  
+                      <strong>{{articlee.titre}}</strong>
+  
+                    </h4>
+  
+                    <hr>
+  
+                    <!-- Text -->
+                    <p class="card-text mb-3">
+                        {{articlee.contenu}}
+                    </p>
+  
+                    <p class="font-small font-weight-bold dark-grey-text mb-1">
+  
+                      <i class="far fa-clock-o"></i> {{articlee.dateCreation | date: 'dd/MM/yyyy'}}</p>
+  
+                    <p class="font-small grey-text mb-0">{{articlee.creePar}}</p>
+  
+                    <p class="text-right mb-0 font-small font-weight-bold">
+  
+                      <a (click)="onArticle(articlee.id)">read more
+  
+                        <i class="fas fa-angle-right"></i>
+  
+                      </a>
+  
+                    </p>
+  
+                  </div>
+                  <!-- Card content -->
+  
+                </div>
+                <!-- Card -->
+  
+              </div>
+              <!-- Grid column -->
+  
+            </div>
+            <!-- Grid row -->
+  
+  
+          </div>
+          <!-- Main news -->            
+
+        </div>
+        <!-- Magazine -->
+    </div>
+</main>

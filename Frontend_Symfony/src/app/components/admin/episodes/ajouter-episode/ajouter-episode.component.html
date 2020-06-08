@@ -1,0 +1,108 @@
+<main>
+  <div class="center-screen">
+    <section class="form-gradient mb-5">
+      <mdb-card>
+
+        <!--Header-->
+        <div class="header purple-gradient">
+
+          <div class="row d-flex justify-content-center">
+            <h3 class="white-text mb-0 py-4 font-weight-bold">New Episode</h3>
+          </div>
+
+        </div>
+        <!--Header-->
+
+        <mdb-card-body class="mx-4">
+
+        <form [formGroup]="addEpisodeForm" (ngSubmit)="addNewEpisode()">
+          <div class="md-form">
+            <mdb-icon fas icon="tag" class="prefix grey-text"></mdb-icon>
+            <input type="text" mdbValidate id="form106" class="form-control" mdbInput formControlName="nom">
+            <label for="form106">Name</label>
+            <mdb-error *ngIf="addEpisodeForm.get('nom').invalid && (addEpisodeForm.get('nom').dirty ||addEpisodeForm.get('nom').touched)">saisir le nom</mdb-error>
+            <mdb-success *ngIf="addEpisodeForm.get('nom').valid && (addEpisodeForm.get('nom').dirty || addEpisodeForm.get('nom').touched)"></mdb-success>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="clipboard-list" class="prefix grey-text" ></mdb-icon>
+            <mat-form-field mdbValidate>
+              <mat-label>Podcast</mat-label>
+              <mat-select  formControlName="podcast">
+                <mat-option *ngFor="let podcast of podcasts" [value]="podcast.id">
+                  {{podcast.nomPodcast}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mdb-error *ngIf="addEpisodeForm.get('podcast').invalid && (addEpisodeForm.get('podcast').dirty || addEpisodeForm.get('podcast').touched)">saisir la podcast</mdb-error>
+            <mdb-success *ngIf="addEpisodeForm.get('podcast').valid && (addEpisodeForm.get('podcast').dirty || addEpisodeForm.get('podcast').touched)"></mdb-success>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="users" class="prefix grey-text"></mdb-icon>
+            <input type="text" mdbValidate id="form107" class="form-control" mdbInput formControlName="invites">
+            <label for="form107">Invites</label>
+            <mdb-error *ngIf="addEpisodeForm.get('invites').invalid && (addEpisodeForm.get('invites').dirty || addEpisodeForm.get('invites').touched)">les invites ?</mdb-error>
+            <mdb-success *ngIf="addEpisodeForm.get('invites').valid && (addEpisodeForm.get('invites').dirty || addEpisodeForm.get('invites').touched)"></mdb-success>
+          </div>
+
+          <div class="file-field md-form">
+            <div mdbBtn floating="true" size="md" color="pink" mdbWavesEffect>
+              <mdb-icon fas icon="file-audio" aria-hidden="true"></mdb-icon>
+              <input  type="file" mdbFileSelect accept="audio/*,video/*" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" formControlName="sequence">
+            </div>
+            <div class="file-path-wrapper mt-3">
+              <input mdbValidate class="file-path" type="text" placeholder="Choisir la sequence" [value]="showFiles()" formControlName="sequence_name">
+              <mdb-error *ngIf="addEpisodeForm.get('sequence').invalid && (addEpisodeForm.get('sequence').dirty || addEpisodeForm.get('sequence').touched)">saisir le titre</mdb-error>
+              <mdb-success *ngIf="addEpisodeForm.get('sequence').valid && (addEpisodeForm.get('sequence').dirty || addEpisodeForm.get('sequence').touched)"></mdb-success>
+            </div>
+          </div>
+
+          <!--Grid row-->
+          <div class="row d-flex align-items-center mb-3 mt-4">
+
+            <!--Grid column-->
+            <div class="col-md-12">
+              <div class="text-center">
+                <button type="submit" mdbBtn color="grey" rounded="true" class="z-depth-1a" [disabled]="addEpisodeForm.invalid">Add</button>
+                <button type="button" mdbBtn color="red" rounded="true" class="z-depth-1a" (click)="init()">Rest</button>
+              </div>
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--Grid row-->
+        </form>
+
+        </mdb-card-body>
+
+      </mdb-card>
+      <!--/Form with header-->
+    </section>
+  </div>
+</main>
+
+
+<!-- Model success-->
+<div mdbModal #success="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog modal-notify modal-success modal-side modal-bottom-right" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Episode created Successfuly</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Model success-->

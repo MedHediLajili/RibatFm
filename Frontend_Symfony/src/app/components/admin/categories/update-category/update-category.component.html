@@ -1,0 +1,23 @@
+<div class="deep-orange darken-4 white-text text-center py-4  modal-header">
+  <button type="button" class="close pull-right" aria-label="Close" (click)=" updateCategoryRef.hide()">
+    <span aria-hidden="true" class="white-text">×</span>
+  </button>
+  <h4 class="modal-title font-weight-bold w-100" id="myModalLabel">Update Category</h4>
+</div>
+<div class="modal-body">
+  <form #f="ngForm">
+      <div class="md-form mb-5">
+        <mdb-icon fas icon="list-alt" class="prefix grey-text"></mdb-icon>
+        <input type="text" id="form3" mdbValidate class="form-control" mdbInput [ngModel]="content.nomCategory" name="nomCategory" #input="ngModel" required >
+        <label for="form3">Name</label>
+        <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Enter a name for the category</mdb-error>
+        <mdb-success *ngIf="input.valid && (input.dirty || input.touched)"></mdb-success>
+      </div>
+    </form>
+</div>
+<div class="modal-footer justify-content-center">
+  <button type="submit" mdbBtn color="mdb-color"  mdbWavesEffect (click)="onSubmit()" [disabled]="!f.valid">
+    Save
+    <mdb-icon far icon="edit" class="ml-1"></mdb-icon>
+  </button>
+</div>

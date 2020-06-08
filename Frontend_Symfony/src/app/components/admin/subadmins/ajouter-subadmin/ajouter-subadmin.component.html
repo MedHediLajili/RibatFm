@@ -1,0 +1,97 @@
+<main>
+  <div class="center-screen">
+  <section class="form-gradient mb-5">
+    <mdb-card>
+
+      <!--Header-->
+      <div class="header aqua-gradient">
+
+        <div class="row d-flex justify-content-center">
+          <h3 class="white-text mb-0 py-4 font-weight-bold">New SubAdmin</h3>
+        </div>
+
+      </div>
+      <!--Header-->
+
+      <mdb-card-body class="mx-4">
+      <form [formGroup]="addSubAdminForm" (ngSubmit)="addNewSubAdmin()">
+          <div class="md-form">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            <input type="text" mdbValidate id="form104" class="form-control" mdbInput formControlName="nom">
+            <label for="form104">Name</label>
+            <mdb-error *ngIf="addSubAdminForm.get('nom').invalid && (addSubAdminForm.get('nom').dirty || addSubAdminForm.get('nom').touched)">saisir le nom</mdb-error>
+            <mdb-success *ngIf="addSubAdminForm.get('nom').valid && (addSubAdminForm.get('nom').dirty || addSubAdminForm.get('nom').touched)"></mdb-success>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            <input type="text" mdbValidate id="form105" class="form-control" mdbInput formControlName="prenom">
+            <label for="form105">Last name</label>
+            <mdb-error *ngIf="addSubAdminForm.get('prenom').invalid && (addSubAdminForm.get('prenom').dirty || addSubAdminForm.get('prenom').touched)">saisir le prenom</mdb-error>
+            <mdb-success *ngIf="addSubAdminForm.get('prenom').valid && (addSubAdminForm.get('prenom').dirty || addSubAdminForm.get('prenom').touched)"></mdb-success>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+            <input type="text" mdbValidate id="form106" class="form-control" mdbInput formControlName="email">
+            <label for="form106">Email</label>
+            <mdb-error *ngIf="addSubAdminForm.get('email').invalid && (addSubAdminForm.get('email').dirty || addSubAdminForm.get('email').touched)">saisir un email correct</mdb-error>
+            <mdb-success *ngIf="addSubAdminForm.get('email').valid && (addSubAdminForm.get('email').dirty || addSubAdminForm.get('email').touched)"></mdb-success>
+          </div>
+
+          <div class="md-form">
+            <mdb-icon fas icon="key" class="prefix grey-text"></mdb-icon>
+            <input type="text" mdbValidate id="form107" class="form-control" mdbInput formControlName="password">
+            <label for="form107">Password</label>
+            <mdb-error *ngIf="addSubAdminForm.get('password').invalid && (addSubAdminForm.get('password').dirty || addSubAdminForm.get('password').touched)">saisir un motdepass</mdb-error>
+            <mdb-success *ngIf="addSubAdminForm.get('password').valid && (addSubAdminForm.get('password').dirty || addSubAdminForm.get('password').touched)"></mdb-success>
+          </div>
+
+
+        <!--Grid row-->
+        <div class="row d-flex align-items-center mb-3 mt-4">
+
+          <!--Grid column-->
+          <div class="col-md-12">
+            <div class="text-center">
+              <button type="submit" mdbBtn color="grey" rounded="true" class="z-depth-1a" [disabled]="addSubAdminForm.invalid" >Add</button>
+              <button type="button" mdbBtn color="red" rounded="true" class="z-depth-1a" (click)="init()">Reset</button>
+            </div>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+      </form>
+      </mdb-card-body>
+
+    </mdb-card>
+    <!--/Form with header-->
+  </section>
+    </div>
+</main>
+
+
+<!-- Model success-->
+<div mdbModal #success="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog modal-notify modal-success modal-side modal-bottom-right" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">SubAdmin was created Successfuly</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Model success-->

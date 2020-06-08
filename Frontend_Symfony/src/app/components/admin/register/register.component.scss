@@ -1,0 +1,28 @@
+.view {
+  height: 100%;
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .view {
+    height: 1000px;
+  }
+}
+@media (min-width: 451px) and (max-width: 740px) {
+  .view {
+    height: 1200px;
+  }
+}
+@media (max-width: 450px) {
+  .view {
+    height: 1400px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .view {
+    height: 698px;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1600px) {
+  .view {
+    height: 757px;
+  }
+}

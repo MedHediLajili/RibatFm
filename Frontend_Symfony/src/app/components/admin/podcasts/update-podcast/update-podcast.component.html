@@ -1,0 +1,36 @@
+<div class=" indigo darken-4 white-text text-center py-4 modal-header ">
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true" class="white-text">×</span>
+  </button>
+  <h4 class="modal-title font-weight-bold w-100" id="myModalLabel">Edit Podcast</h4>
+</div>
+<div class="modal-body">
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;" (ngSubmit)="onSubmit()" #f="ngForm">
+
+        <!-- Name -->
+        <div class="md-form mt-3">
+          <input type="text" id="materialContactFormName" mdbValidate class="form-control" name="nomPodcast" [ngModel]="content.nomPodcast" #inputnom="ngModel" required="true" mdbInput>
+          <label for="materialContactFormName">Podcast</label>
+          <mdb-error *ngIf="inputnom.invalid && (inputnom.dirty || inputnom.touched)">enter an value</mdb-error>
+          <mdb-success *ngIf="inputnom.valid && (inputnom.dirty || inputnom.touched)"></mdb-success>
+        </div>
+
+        <!-- Subject -->
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+              <mdb-select mdbValidate (selected)="optionSelect($event)" [options]="optionsSelect" placeholder="Choisir le Type" [(ngModel)]="selectedValue" name="typePodcast" #inputtype="ngModel"></mdb-select>
+              <mdb-error *ngIf="inputtype.invalid && (inputtype.dirty || inputtype.touched)">select the Type</mdb-error>
+              <mdb-success *ngIf="inputtype.valid && (inputtype.dirty || inputtype.touched)"></mdb-success>
+            </div>
+        </div>
+
+        <!-- Send button -->
+
+        <button type="submit" mdbBtn color="indigo" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect darken-4" mdbWavesEffect [disabled]="!f.valid">
+          Save
+        </button>
+
+      </form>
+</div>
+

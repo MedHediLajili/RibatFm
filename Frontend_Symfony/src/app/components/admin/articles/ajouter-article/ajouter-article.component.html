@@ -1,0 +1,111 @@
+<main>
+  <div class="center-screen">
+  <section class="form-gradient mb-5">
+  <mdb-card>
+
+    <!--Header-->
+    <div class="header peach-gradient">
+
+      <div class="row d-flex justify-content-center">
+        <h3 class="white-text mb-0 py-4 font-weight-bold">New Article</h3>
+      </div>
+
+    </div>
+    <!--Header-->
+
+    <mdb-card-body class="mx-4">
+
+     <form [formGroup]="addArticleForm" (ngSubmit)="addNewArticle()">
+      <div class="md-form">
+        <mdb-icon fas icon="tag" class="prefix grey-text"></mdb-icon>
+        <input type="text" mdbValidate id="form106" class="form-control" mdbInput formControlName="titre">
+        <label for="form106">Subject</label>
+        <mdb-error *ngIf="addArticleForm.get('titre').invalid && (addArticleForm.get('titre').dirty || addArticleForm.get('titre').touched)">enter the title</mdb-error>
+        <mdb-success *ngIf="addArticleForm.get('titre').valid && (addArticleForm.get('titre').dirty || addArticleForm.get('titre').touched)"></mdb-success>
+      </div>
+
+      <div class="md-form">
+        <mdb-icon fas icon="clipboard-list" class="prefix grey-text" ></mdb-icon>
+        <mat-form-field mdbValidate>
+          <mat-label>Category</mat-label>
+          <mat-select  formControlName="category">
+            <mat-option *ngFor="let categorie of categories" [value]="categorie.id">
+              {{categorie.nomCategory}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mdb-error *ngIf="addArticleForm.get('category').invalid && (addArticleForm.get('category').dirty || addArticleForm.get('category').touched)">choisir la categorie</mdb-error>
+        <mdb-success *ngIf="addArticleForm.get('category').valid && (addArticleForm.get('category').dirty || addArticleForm.get('category').touched)"></mdb-success>
+      </div>
+
+      <div class="md-form">
+        <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
+        <textarea type="text" mdbValidate id="form107" class="md-textarea form-control" rows="5" mdbInput formControlName="contenu"></textarea>
+        <label for="form107">Your message</label>
+        <mdb-error *ngIf="addArticleForm.get('contenu').invalid && (addArticleForm.get('contenu').dirty || addArticleForm.get('contenu').touched)">saisir le contenu de l'article</mdb-error>
+        <mdb-success *ngIf="addArticleForm.get('contenu').valid && (addArticleForm.get('contenu').dirty || addArticleForm.get('contenu').touched)"></mdb-success>
+      </div>
+
+      <div class="file-field md-form">
+          <div mdbBtn floating="true" size="md" color="amber" mdbWavesEffect>
+            <mdb-icon fas icon="cloud-upload-alt" aria-hidden="true"></mdb-icon>
+            <input type="file" accept="image/*" mdbFileSelect  (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput"  formControlName="image">
+          </div>
+          <div class="file-path-wrapper mt-3">
+            <input class="file-path" mdbValidate  type="text" placeholder="Upload your file" [value]="showFiles()" formControlName="image_name">
+            <mdb-error *ngIf="addArticleForm.get('image').invalid && (addArticleForm.get('image').dirty)">choose an image for the article</mdb-error>
+            <mdb-success *ngIf="addArticleForm.get('image').valid && (addArticleForm.get('image').dirty || addArticleForm.get('image').touched)"></mdb-success>
+          </div>
+        </div>
+
+
+      <!--Grid row-->
+      <div class="row d-flex align-items-center mb-3 mt-4">
+
+        <!--Grid column-->
+        <div class="col-md-12">
+          <div class="text-center">
+            <button type="submit" mdbBtn color="grey" rounded="true" class="z-depth-1a" [disabled]="addArticleForm.invalid">Add</button>
+            <button type="button" mdbBtn color="red" rounded="true" class="z-depth-1a" (click)="init()">Reset</button>
+          </div>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+     </form>
+
+    </mdb-card-body>
+
+  </mdb-card>
+  <!--/Form with header-->
+  </section>
+  </div>
+</main>
+
+
+
+
+<!-- Model success-->
+<div mdbModal #success="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog modal-notify modal-success modal-side modal-bottom-right" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Article was created Successfuly</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Model success-->
